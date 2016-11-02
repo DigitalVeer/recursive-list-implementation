@@ -160,9 +160,7 @@ public class RecursiveList<T> implements ListInterface<T> {
 	 * @return data contained within i'th {@code DLNode} in deque
 	 */
 	public T get(int i, DLNode<T> currNode, int index){
-		if (index == i)
-			return currNode.getData();
-		return get(i, currNode.getNext(), ++index);
+		return (index == i ? currNode.getData() : get(i, currNode.getNext(), ++index));
 	}
 	
 	 /**
@@ -184,9 +182,7 @@ public class RecursiveList<T> implements ListInterface<T> {
 	 * @return i'th {@code DLNode} in deque 
 	 */
 	public DLNode<T> getNode(int i, DLNode<T> currNode, int index){
-		if (i == index)
-			return currNode;
-		return getNode(i, currNode.getNext(), ++index);
+		return (i == index ? currNode : getNode(i, currNode.getNext(), ++index));
 	}
 	
 	/**
